@@ -1,28 +1,81 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
-<html><head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="qrichtext" content="1" /><style type="text/css">
-p, li { white-space: pre-wrap; }
-</style></head><body style=" font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;">
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Python 3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)]</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">IPython 7.29.0 -- An enhanced Interactive Python.</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#00ff00;">In [</span><span style=" font-weight:600; color:#00ff00;">1</span><span style=" color:#00ff00;">]:</span> runfile('C:/Users/oke.esther/untitled4.py', wdir='C:/Users/oke.esther')</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">    Welcome to Rock, Paper, Scissors!!</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">    These are the rules of the game:</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">    - Rock vs Paper = Paper wins</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">    - Rock vs Scissors = Rock wins</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">    - Paper vs Scissors = Scissors wins</p>
-<br/>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Enter your choice: S</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Player (Scissors) : CPU(Paper)</p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Scissors beats paper! Player(Scissors) wins!</p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
-<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#00ff00;">In [</span><span style=" font-weight:600; color:#00ff00;">2</span><span style=" color:#00ff00;">]:</span> </p></body></html>
+import random
+
+def start_game():
+    
+    # Welcome to the game
+    print("""
+    Welcome to Rock, Paper, Scissors!!\n
+    These are the rules of the game:
+    - Rock vs Paper = Paper wins
+    - Rock vs Scissors = Rock wins
+    - Paper vs Scissors = Scissors wins
+        """)
+
+    # list of all possible options
+    options = ["R", "P", "S"]
+
+    # ask player to input an option
+    player = input("Enter your choice: ")
+    while player not in options:
+        player = input("Please enter a valid response: ")
+
+
+    # if player inputs R, rock is chosen
+    # if player inputs P, paper is chosen 
+    # if player inputs S, scissors is chosen     
+    if player == "R":
+        player = "Rock"
+    elif player == "P":
+        player = "Paper"
+    else:
+        player = "Scissors"
+
+    # computer selects randomly from the available options
+    Gamer1 = random.choice(options)
+
+    # if computer chooses R, the computer chooses rock
+    # if computer chooses P, the computer chooses paper
+    # if computer chooses S, the computer chooses scissor
+    if Gamer1 == "R":
+        Gamer1 = "Rock"
+    elif Gamer1 == "P":
+        Gamer1 = "Paper"
+    else:
+        Gamer1 = "Scissors"
+
+    # print options chosen by the player and computer
+    print(f"\nPlayer ({player}) : CPU({Gamer1})")
+
+
+    # if both player and computer choose the same option, it is a tie
+    # The game would restart until one of the players wins
+    if player == Gamer1:
+        print("It's a tie! Try again!")
+        start_game()
+
+    # if player chooses rock and computer chooses paper, player wins
+    # if player chooses rock and computer chooses scissors, player loses
+    elif player == "Rock":
+        if Gamer1 == "Scissors":
+            print(f"Rock beats scissors! Player({player}) wins!\n")
+        else:
+            print(f"Paper beats rock! CPU({Gamer1}) wins!\n")
+
+    # if player chooses paper and computer chooses rock, player wins
+    # if player chooses paper and computer chooses scissors, player loses
+    elif player == "Paper":
+        if Gamer1 == "Rock":
+            print(f"Paper beats rock! Player({player}) wins!\n")
+        else:
+            print(f"Scissors beats paper! CPU{(Gamer1)} wins!\n")
+
+    # if player chooses scissors and computer chooses rock, player loses
+    # if player chooses scissors and computer chooses paper, player wins
+    elif Gamer1 == "Paper":
+        print(f"Scissors beats paper! Player({player}) wins!\n")
+    else:
+        print(f"Rock beats scissors! CPU({Gamer1}) wins!\n")
+       
+       
+# function to start the game
+start_game()
